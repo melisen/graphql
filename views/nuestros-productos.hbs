@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestros Productos</title>
+    <link rel="stylesheet" href="/estilos.css">
+</head>
+
+<body>
+    <header class="container-fluid" id="header">
+        <nav id="navbar">
+            <div class="container-fluid">
+
+                <ul style="display:flex; flex-direction:row; justify-content:space-around; font-size:1.3rem;">
+                    <li class="btn-navbar" style="text-decoration:none; list-style-type:none;">
+                        <a class="link-navbar"
+                            style="text-decoration:none; list-style-type:none; color:rgb(61, 12, 140);"
+                            href="/api/admin">Administración</a>
+                    </li>
+                    <li class="btn-navbar" style="text-decoration:none; list-style-type:none;">
+                        <a class="link-navbar"
+                            style="text-decoration:none; list-style-type:none; color:rgb(61, 12, 140);"
+                            href="/api/carrito/{{data.id}}/productos">Ver Carrito</a>
+                    </li>
+                    <li class="btn-navbar" style="text-decoration:none; list-style-type:none;">
+                        <button><a class="link-navbar"
+                                style="text-decoration:none; list-style-type:none; color:rgb(61, 12, 140);"
+                                href="/api/usuarios/logout">Cerrar sesión</a></button>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+
+    <div>
+        <h2 class="link-navbar" style="margin:20px; color:rgb(91, 42, 136)">Nuestros productos</h2>
+
+        <form method="post" action="/api/productos">
+            <h3 class="link-navbar" style="margin:20px; color:rgb(64, 5, 119)">Filtrar por categoría</h3>
+            <h3  style="margin:20px; color:rgb(138, 93, 180)">Elegir color:</h3>
+            <select name="category" id="category" style="margin:20px;">
+                <option value="todos">Todos</option>
+                <option value="multicolor">Multicolor</option>
+                <option value="blanco">Blanco</option>
+                <option value="negro">Negro</option>
+                <option value="rosa">Rosa</option>
+                <option value="azul">Azul</option>
+            </select><br>
+            <button type="submit" style="background-color:rgb(130, 95, 164); margin:0 20px;"> Filtrar</button>
+        </form>
+        <div style="display:flex; flex-wrap:wrap;">
+            {{#each data.todosProd}}
+            <div class="card" style="box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);
+            transition:0.3s;
+            text-align:center;
+            width:300px;
+            padding:1rem;
+            margin:1rem 0.5rem; 
+            display:flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items:center;">
+                <div class="container-img" style="width:200px;">
+                    <img src="{{this.thumbnail}}" alt="{{this.title}}" class="img-card" style="width:150px;" />
+                </div>
+                <div class="container">
+                    <h4>{{this.title}}</h4>
+                    <h4>$ {{this.price}}</h4>
+                </div>
+                <div class="container container-btn">
+                    <form method="post" action="/api/productos/{{this.category}}">
+                        <input name="categoryname" id="category" value="{{this.category}}" type="hidden">
+                        <input name="idprod" id="idprod" value="{{this.id}}" type="hidden">
+                        <button type="submit" id=""
+                            style="color:white; background-color:rgb(92, 200, 92); margin:20px; border-radius:3px; border-width:0px; padding:8px;">
+                            Ver detalle
+                        </button>
+                    </form>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

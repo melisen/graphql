@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+</head>
+
+<body>
+
+
+    <div style="border-color:grey; border-width:5px; width:70%; background-color:rgb(226, 225, 225); padding:10px;">
+        <h2 style="color:blue; font-weight:bold; margin-left: 40px;">Centro de Mensajes</h2>
+
+        <form onsubmit="return enviarMensaje(this)" style="margin:15px; padding:10px;">
+            <div class="chat-message clearfix">
+                <div class="input-group mb-0">
+                    <div class="input-group-append">
+                        <input id="email" type="text" class="form-control" placeholder="Email" />
+
+                        <ul id="chatCompleto">
+                        </ul>
+                        <input id="chat_mensaje" type="text" class="form-control" placeholder="Mensaje" />
+                        <input id="enviar_mensaje" type="submit" class="form-control" placeholder="Submit" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../index.js"></script>
+</body>
+
+</html>

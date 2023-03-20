@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil</title>
+    <link rel="stylesheet" href="./estilos.css">
+</head>
+
+<body>
+    <header class="container-fluid" id="header">
+        <nav id="navbar">
+            <div class="container-fluid">
+
+                <ul style="display:flex; flex-direction:row; justify-content:space-around;">
+                    <li class="btn-navbar">
+                        <a class="link-navbar" href="/api/admin">Administración</a>
+                    </li>
+                    <li class="btn-navbar">
+                        <a class="link-navbar" href="/api/carrito/{{user.carritoactual}}/productos">Ver Carrito</a>
+                    </li>
+                    <li class="btn-navbar" style="text-decoration:none; list-style-type:none;">
+                        <form method="post" action="/api/carrito">
+                            <button type="submit" id="" class="link-navbar"
+                                style="text-decoration:none; list-style-type:none; color:rgb(61, 12, 140); font-size:1.2rem; background-color:white; border-width:0;">
+                                Crear Carrito
+                            </button>
+                        </form>
+                    </li>
+                    <li class="btn-navbar" style="text-decoration:none; list-style-type:none;">
+                        <button
+                            style="text-decoration:none; list-style-type:none; color:rgb(61, 12, 140); font-size:1.2rem; background-color:white; border-width:0;">
+                            <a class="link-navbar"
+                                style="text-decoration:none; list-style-type:none; color:rgb(61, 12, 140);"
+                                href="/api/usuarios/logout">Cerrar sesión</a></button>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+
+
+    <div
+        style="background-color:rgb(226, 225, 225); box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); padding:20px; margin:20px;">
+        <h2 style="color:rgb(31, 31, 154); font-weight:bold;">Mi perfil</h2>
+        <div style="width: 120px;
+            display:flex;
+            justify-content: center;
+            align-items:center;">
+            <img src="{{user.avatar}}" alt="{{user.username}}"
+                style="max-height: 100%; max-width: 100%; border-radius: 5px 5px 0 0;" />
+        </div><br />
+        <h4 style="color:rgb(18, 18, 122); ">Nombre: <span style="font-size:1.2rem;">{{user.nombre}}
+                {{user.apellido}}</span>
+        </h4>
+        <h4 style="color:rgb(18, 18, 122);">Usuario: <span style="font-size:1.2rem;"> {{user.username}}</span></h4>
+        <h4 style="color:rgb(18, 18, 122); "> Edad: <span style="font-size:1.2rem;">{{user.edad}}</span> </h4>
+        <h4 style="color:rgb(18, 18, 122); ">Dirección: <span style="font-size:1.2rem;"> {{user.direccion}}</span> </h4>
+        <h4 style="color:rgb(18, 18, 122); ">Teléfono: <span style="font-size:1.2rem;"> {{user.telefono}}</span></h4>
+
+
+    </div>
+
+
+</body>
+
+</html>

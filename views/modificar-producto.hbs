@@ -1,0 +1,69 @@
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Modificar</title>
+
+</head>
+
+<body>
+
+
+  <div
+    style="background-color:rgb(219, 249, 208); color:rgb(4, 67, 42); display:flex; flex-direction:row; justify-content:space-around; ">
+    <button style="background-color:yellow; border-radius:3px; border-width:0; margin:10px; color:rgb(22, 22, 22);">
+      <a href="/api/usuarios/logout">Desloguear</a>
+    </button>
+
+  </div>
+
+  <div style="background-color:rgb(226, 225, 225); margin:10px; padding:10px;">
+    <div class="card" style="box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);
+    transition:0.3s;
+    text-align:center;
+    padding:1rem;
+    margin:1rem 0.5rem; 
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;">
+        <div class="container-img bordes" >
+            <img src="{{producto.thumbnail}}" alt="{{producto.title}}" class="img-card" style="width:150px;"/>
+        </div>
+        <div class="container bordes">
+            <h4> {{producto.title}}</h4>
+            <h4>{{producto.category}}</h4>
+            <h4>$ {{producto.price}}</h4>
+        </div>
+    </div>
+
+    <div>
+    <form method="post" action="/api/admin/update-prod">
+    <input name="idprod" id="idprod" value="{{producto._id}}" type="hidden"> 
+      <h1 style="color:blue; font-weight:bold;">Ingrese nuevamente el producto:</h1>
+      <label for="category">Categoría:</label>
+      <select name="category" id="category">
+        <option value="multicolor">Multicolor</option>
+        <option value="blanco">Blanco</option>
+        <option value="negro">Negro</option>
+        <option value="rosa">Rosa</option>
+        <option value="azul">Azul</option>
+      </select><br>
+      <label for="title">Nombre de producto:</label>      
+      <input type="text" id="title" name="title"><br>
+      <label for="price">Precio:</label>      
+      <input type="text" id="price" name="price"><br>
+      <label for="thumbnail">Imagen (URL):</label>      
+      <input type="text" id="thumbnail" name="thumbnail"><br>
+      <input type="submit">
+    </form>
+    </div>
+
+
+    
+  </div>
+
+</body>
+
+</html>

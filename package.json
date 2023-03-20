@@ -1,0 +1,31 @@
+{
+  "name": "proyecto-ecommerce",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000i\u0000n\u0000i\u0000c\u0000i\u0000o\u0000-\u0000s\u0000e\u0000s\u0000i\u0000o\u0000n\u0000\r\u0000 \u0000",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "compression": "^1.7.4",
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-graphql": "^0.12.0",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "graphql": "^16.6.0",
+    "minimist": "^1.2.7",
+    "mongoose": "^6.8.3",
+    "nodemailer": "^6.9.1",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "socket.io": "^4.5.4",
+    "twilio": "^4.7.2",
+    "winston": "^3.8.2"
+  }
+}
